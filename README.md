@@ -34,8 +34,8 @@ We recommend using a virtual environment. The code was developed and tested usin
 - SciPy
 - Matplotlib
 - scikit-learn
-- Brian2 (for spiking neural simulations, if applicable)
-- Jupyter
+- [NEST Simulator](https://nest-simulator.readthedocs.io/en/stable/) v3.3
+- [NEURON](https://neuron.yale.edu/neuron/)
 
 You can install the full environment using:
 
