@@ -1,0 +1,4 @@
+/home/spanzeri/NEST3/nest_install/lib/nest/mymodule_NMDA.so
+/home/spanzeri/NEST3/nest_install/lib/nest/libmymodule_NMDA.so
+/home/spanzeri/NEST3/nest_install/include/mymodule_NMDA/mymodule_NMDA.h
+/home/spanzeri/NEST3/nest_install/share/nest/sli/mymodule_NMDA-init.sli
