@@ -95,7 +95,7 @@ This project is licensed under the [Creative Commons Attribution 4.0 Internation
 ## Contact
 
 For questions, please contact:
-Gabriele Mancini - \[[your.email@example.com](mailto:your.email@example.com)]
+Gabriele Mancini - \[[gabriele.mancini@iit.it](gabriele.mancini@iit.it)]
 
 ---
 
