@@ -37,18 +37,53 @@ We recommend using a virtual environment. The code was developed and tested usin
 - [NEST Simulator](https://nest-simulator.readthedocs.io/en/stable/) v3.3
 - [NEURON](https://neuron.yale.edu/neuron/)
 
-You can install the full environment using:
 
-```bash
-conda env create -f env/environment.yml
-conda activate nmda_info_study
-````
+# Instructions to simulate the LIF model network with NMDA
 
-Or install manually with pip:
+## Building the neuron model 
 
-```bash
-pip install -r env/requirements.txt
-```
+Instructions to compile the neuron model in NEST are based on the tutorial about “Writing an extension module” (https://nest.github.io/nest-simulator/extension_modules). 
+
+1 - Define the environment variable 'NEST_INSTALL_DIR' to contain the path to which you have installed NEST, e.g. using bash:
+
+export NEST_INSTALL_DIR=/Users/pablo/NEST/ins
+
+2 - Create a build directory in the folder 'neuron_model':
+
+cd neuron_model
+mkdir build
+cd build
+
+3 - The configure process uses the script 'nest-config' to find out where NEST is installed, where the source code resides, and which compiler options were used for compiling NEST. If 'nest-config' is not in your path, you need to provided it explicitly like this (don't forget to add '..' at the end):
+
+cmake -Dwith-nest=${NEST_INSTALL_DIR}/bin/nest-config ..
+
+4 - Compile:
+
+make
+
+make install
+
+It might be also necessary to update the LD_LIBRARY_PATH, e.g.:
+
+export LD_LIBRARY_PATH=${NEST_INSTALL_DIR}/lib/python2.7/site-packages/nest:$LD_LIBRARY_PATH
+
+
+## Running a simulation 
+
+Simulation scripts are in folder 'LIF_network/analysis'. Adjust the simulation parameters in the script and execute it using the Python interpreter, e.g.:
+
+python3 save_results_1.py
+
+# Instructions to simulate the multicompartment model network 
+Simulation scripts are in folder 'multicompartment_network/analysis'. Adjust the simulation parameters in the script and execute it using the Python interpreter, e.g.:
+
+python3 simulation_1.py
+
+or launch different MPI jobs to execute it much faster:
+
+mpirun -np 8 python3 simulation_1.py
+
 
 ## Running the Code
 
